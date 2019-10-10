@@ -40,16 +40,19 @@ if (isset($_GET["rendu"])) {
                 <img src="images/logo.png" class="logo" alt="logo">
             </div>
         </div>
-        <div class="row erreurpadding">
-            <div class="col-12 erreur">
-                <?php
-                if ($_GET["rendu"] == 1) {
-                    include('erreurs.php');
-                    print_r($_POST);
-                }
-                ?>
+        <?php if ($_GET["rendu"] == 1) { ?>
+            <div class="row erreurpadding">
+                <div class="col-12 erreur">
+                    <?php
+
+                        include('erreurs.php');
+                        ?>
+                </div>
             </div>
-        </div>
+        <?php
+        }
+        ?>
+
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron message">
@@ -131,8 +134,8 @@ if (isset($_GET["rendu"])) {
                                                                                                                             }
                                                                                                                         } else {
                                                                                                                             ?><option value="autre">Autre</option><?php
-                                                                                                                                                                }
-                                                                                                                                                                ?>
+                                                                                                                                                                    }
+                                                                                                                                                                    ?>
                         <option value="autre">Autre</option>
                         <option value="demande">Demande</option>
                         <option value="sav">S.A.V</option>
