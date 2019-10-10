@@ -1,4 +1,16 @@
 <?php
+if (!preg_match("/^[a-zA-Z ]*$/", $_POST["nom"])) {
+    $_POST["nom"] = "";
+}
+if (!preg_match("/^[a-zA-Z ]*$/", $_POST["prenom"])) {
+    $_POST["prenom"] = "";
+}
+$_POST['mail'] = filter_var($_POST['mail'], FILTER_SANITIZE_EMAIL);
+if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
+    $_POST["mail"] = "";
+}
+$_POST["message"] = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $_POST["message"]);
+print_r($_POST);
 if (isset($_GET["rendu"])) {
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
@@ -100,7 +112,7 @@ if (isset($_GET["rendu"])) {
                 </div>
                 <div class="col-12 col-md-6">
                     <label for="mail">Adresse mail<span class="obligatoire"><span class="obligatoire">*</span></span></label>
-                    <input type="mail" name="mail" id="mail" class="form-control <?php if ((empty($_POST["prenom"])) && isset($_GET["rendu"])) {
+                    <input type="mail" name="mail" id="mail" class="form-control <?php if ((empty($_POST["mail"])) && isset($_GET["rendu"])) {
                                                                                         echo "rouge";
                                                                                     } ?>" placeholder="email@adresse.com" value="<?php echo $mail; ?>">
                 </div>
