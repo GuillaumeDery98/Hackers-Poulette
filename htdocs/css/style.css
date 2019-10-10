@@ -40,6 +40,15 @@
     padding-bottom: 0.5rem;
 }
 
+.valide {
+    margin-top: 1rem;
+    background-color: #15c5bd;
+    color: white;
+    border-radius: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 .erreurpadding {
     padding-right: 1rem;
     padding-left: 1rem;

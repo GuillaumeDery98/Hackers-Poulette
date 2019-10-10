@@ -42,12 +42,11 @@ if (isset($_GET["rendu"])) {
         </div>
         <?php if ($_GET["rendu"] == 1) { ?>
             <div class="row erreurpadding">
-                <div class="col-12 erreur">
-                    <?php
 
-                        include('erreurs.php');
-                        ?>
-                </div>
+                <?php
+                    include('erreurs.php');
+                    ?>
+
             </div>
         <?php
         }
