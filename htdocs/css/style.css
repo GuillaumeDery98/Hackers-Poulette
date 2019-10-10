@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Bellota-Regular";
+    src: url("../polices/Bellota-Regular.otf");
+}
+
+.logorow {
+    width: 15rem;
+    height: 20rem;
+    margin-top: -6rem;
+    margin-bottom: 4.4rem;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    border-radius: 1rem;
+    border: 1px solid #15c5bd;
+    background-color: #e9ecef;
+    color: #303030;
+    font-family: "Bellota-Regular";
+}
+
+.message {
+    padding-top: 1rem !important;
+    padding-bottom: 0rem !important;
+}
+
+.erreur {
+    margin-top: 1rem;
+    background-color: tomato;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+.erreurpadding {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+form {
+    margin-bottom: 1rem;
+}
+
+.submit {
+    margin-right: 0px !important;
+    margin-top: 1rem;
+    background-color: #15c5bd !important;
+    border: 0px solid rgb(21, 197, 189) !important;
+}
+
+label {
+    margin-top: 0.5rem;
+}
+
+.obligatoire {
+    color: #15c5bd;
+}
+
+.rouge {
+    border: 1px solid red !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .logorow {
+        display: none;
+    }
+    .container {
+        margin: 0px;
+    }
+}
