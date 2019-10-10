@@ -3,6 +3,10 @@
     src: url("../polices/Bellota-Regular.otf");
 }
 
+body {
+    background-color: #15c5bd;
+}
+
 .logorow {
     width: 15rem;
     height: 20rem;
@@ -36,6 +40,8 @@
     background-color: tomato;
     color: white;
     border-radius: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .erreurpadding {
@@ -72,5 +78,6 @@ label {
     }
     .container {
         margin: 0px;
+        border-radius: 0rem;
     }
 }
