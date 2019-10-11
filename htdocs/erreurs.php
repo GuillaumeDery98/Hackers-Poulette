@@ -1,4 +1,5 @@
 <?php
+//test si formulaire valide et rempli, si oui, message + mail, si non, message d'erreur
 if (!empty($_POST["nom"]) && !empty($_POST["prenom"]) && $_POST["sexe"] != "none" && !empty($_POST["mail"]) && $_POST["pays"] != "none" && !empty($_POST["message"]) && empty($_POST["pot"])) {
     ?>
     <div class="col-12 valide">

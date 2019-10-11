@@ -1,5 +1,5 @@
 <?php
-
+//vérification des formulaires
 if (isset($_GET["rendu"])) {
     if (!preg_match("/^[a-zA-Z ]*$/", $_POST["nom"])) {
         $_POST["nom"] = "";
@@ -12,6 +12,7 @@ if (isset($_GET["rendu"])) {
         $_POST["mail"] = "";
     }
     $_POST["message"] = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $_POST["message"]);
+    //mise de $_POST dans des variables classiques
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     if ($_POST["sexe"] != "none") {
@@ -52,7 +53,8 @@ if (isset($_GET["rendu"])) {
                 <img src="images/logo.png" class="logo" alt="logo">
             </div>
         </div>
-        <?php if (isset($_GET["rendu"])) { ?>
+        <?php //inclusion du message d'erreur/de validation si besoin
+        if (isset($_GET["rendu"])) { ?>
             <div class="row erreurpadding">
 
                 <?php
@@ -77,6 +79,8 @@ if (isset($_GET["rendu"])) {
             <div class="form-row">
                 <div class="col-12 col-md-6">
                     <label for=" nom">Nom<span class="obligatoire"><span class="obligatoire">*</span></span></label>
+                    <?php //Formulaire + encadrement en rouge si besoin + pré-remplissage si besoin 
+                    ?>
                     <input type="text" name="nom" id="nom" class="form-control <?php if ((empty($_POST["nom"])) && isset($_GET["rendu"])) {
                                                                                     echo "rouge";
                                                                                 } ?>" placeholder="Nom" value="<?php if (isset($_GET["rendu"])) {
