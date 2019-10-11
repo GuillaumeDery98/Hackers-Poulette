@@ -1,16 +1,17 @@
 <?php
-if (!preg_match("/^[a-zA-Z ]*$/", $_POST["nom"])) {
-    $_POST["nom"] = "";
-}
-if (!preg_match("/^[a-zA-Z ]*$/", $_POST["prenom"])) {
-    $_POST["prenom"] = "";
-}
-$_POST['mail'] = filter_var($_POST['mail'], FILTER_SANITIZE_EMAIL);
-if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
-    $_POST["mail"] = "";
-}
-$_POST["message"] = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $_POST["message"]);
+
 if (isset($_GET["rendu"])) {
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["nom"])) {
+        $_POST["nom"] = "";
+    }
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["prenom"])) {
+        $_POST["prenom"] = "";
+    }
+    $_POST['mail'] = filter_var($_POST['mail'], FILTER_SANITIZE_EMAIL);
+    if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
+        $_POST["mail"] = "";
+    }
+    $_POST["message"] = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $_POST["message"]);
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     if ($_POST["sexe"] != "none") {
@@ -51,7 +52,7 @@ if (isset($_GET["rendu"])) {
                 <img src="images/logo.png" class="logo" alt="logo">
             </div>
         </div>
-        <?php if ($_GET["rendu"] == 1) { ?>
+        <?php if (isset($_GET["rendu"])) { ?>
             <div class="row erreurpadding">
 
                 <?php
@@ -78,13 +79,17 @@ if (isset($_GET["rendu"])) {
                     <label for=" nom">Nom<span class="obligatoire"><span class="obligatoire">*</span></span></label>
                     <input type="text" name="nom" id="nom" class="form-control <?php if ((empty($_POST["nom"])) && isset($_GET["rendu"])) {
                                                                                     echo "rouge";
-                                                                                } ?>" placeholder="Nom" value="<?php echo $nom; ?>">
+                                                                                } ?>" placeholder="Nom" value="<?php if (isset($_GET["rendu"])) {
+                                                                                                                    echo $nom;
+                                                                                                                }  ?>">
                 </div>
                 <div class="col-12 col-md-6">
                     <label for="prenom">Prénom<span class="obligatoire"><span class="obligatoire">*</span></span></label>
                     <input type="text" name="prenom" id="prenom" class="form-control <?php if ((empty($_POST["prenom"])) && isset($_GET["rendu"])) {
                                                                                             echo "rouge";
-                                                                                        } ?>" placeholder="Prénom" value="<?php echo $prenom; ?>">
+                                                                                        } ?>" placeholder="Prénom" value="<?php if (isset($_GET["rendu"])) {
+                                                                                                                                echo $prenom;
+                                                                                                                            }  ?>">
                 </div>
             </div>
             <div class="form-row">
@@ -113,7 +118,9 @@ if (isset($_GET["rendu"])) {
                     <label for="mail">Adresse mail<span class="obligatoire"><span class="obligatoire">*</span></span></label>
                     <input type="mail" name="mail" id="mail" class="form-control <?php if ((empty($_POST["mail"])) && isset($_GET["rendu"])) {
                                                                                         echo "rouge";
-                                                                                    } ?>" placeholder="email@adresse.com" value="<?php echo $mail; ?>">
+                                                                                    } ?>" placeholder="email@adresse.com" value="<?php if (isset($_GET["rendu"])) {
+                                                                                                                                        echo $mail;
+                                                                                                                                    }  ?>">
                 </div>
             </div>
             <div class="form-row">
@@ -157,7 +164,9 @@ if (isset($_GET["rendu"])) {
                 <label for="message">Votre message<span class="obligatoire"><span class="obligatoire">*</span></span></label>
                 <textarea type="textarea" name="message" id="message" class="form-control <?php if ((empty($_POST["message"])) && isset($_GET["rendu"])) {
                                                                                                 echo "rouge";
-                                                                                            } ?>" placeholder="Votre message"><?php echo $message; ?></textarea>
+                                                                                            } ?>" placeholder="Votre message"><?php if (isset($_GET["rendu"])) {
+                                                                                                                                    echo $message;
+                                                                                                                                }  ?></textarea>
             </div>
             <div class="col-sm-12 d-flex justify-content-end">
                 <input type="text" class="honey" name="pot">
