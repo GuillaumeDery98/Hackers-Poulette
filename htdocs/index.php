@@ -184,7 +184,7 @@ if (isset($_GET["rendu"])) {
             </div>
             <div class="col-sm-12 d-flex justify-content-end">
                 <input type="text" class="honey" name="pot">
-                <button type="submit" class="btn btn-primary mb-2 submit">Envoyer</button>
+                <button type="submit" alt="envoyer" class="btn btn-primary mb-2 submit">Envoyer</button>
             </div>
 
         </form>
