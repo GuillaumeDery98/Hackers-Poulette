@@ -71,7 +71,6 @@ if (isset($_GET["rendu"])) {
 
                 <?php
                     include('erreurs.php');
-                    print_r($_POST);
                     ?>
 
             </div>
