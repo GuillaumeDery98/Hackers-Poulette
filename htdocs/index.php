@@ -10,7 +10,6 @@ if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
     $_POST["mail"] = "";
 }
 $_POST["message"] = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $_POST["message"]);
-print_r($_POST);
 if (isset($_GET["rendu"])) {
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
@@ -161,6 +160,7 @@ if (isset($_GET["rendu"])) {
                                                                                             } ?>" placeholder="Votre message"><?php echo $message; ?></textarea>
             </div>
             <div class="col-sm-12 d-flex justify-content-end">
+                <input type="text" class="honey" name="pot">
                 <button type="submit" class="btn btn-primary mb-2 submit">Envoyer</button>
             </div>
 

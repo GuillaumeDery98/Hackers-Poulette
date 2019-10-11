@@ -77,6 +77,10 @@ label {
     border: 1px solid red !important;
 }
 
+.honey {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     .logorow {
         display: none;
