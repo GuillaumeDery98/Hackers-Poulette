@@ -7,6 +7,18 @@ if (isset($_GET["rendu"])) {
     if (!preg_match("/^[a-zA-Z ]*$/", $_POST["prenom"])) {
         $_POST["prenom"] = "";
     }
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["sexe"])) {
+        $_POST["sexe"] = "";
+    }
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["pays"])) {
+        $_POST["pays"] = "";
+    }
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["sujet"])) {
+        $_POST["sujet"] = "";
+    }
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["pot"])) {
+        $_POST["pot"] = "";
+    }
     $_POST['mail'] = filter_var($_POST['mail'], FILTER_SANITIZE_EMAIL);
     if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
         $_POST["mail"] = "";
@@ -59,6 +71,7 @@ if (isset($_GET["rendu"])) {
 
                 <?php
                     include('erreurs.php');
+                    print_r($_POST);
                     ?>
 
             </div>
