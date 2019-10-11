@@ -153,10 +153,8 @@ if (isset($_GET["rendu"])) {
                                                                                 } else {
                                                                                     ?><option value="sav">S.A.V</option><?php
                                                                                                                             }
-                                                                                                                        } else {
-                                                                                                                            ?><option value="autre">Autre</option><?php
-                                                                                                                                                                    }
-                                                                                                                                                                    ?>
+                                                                                                                        }
+                                                                                                                        ?>
                         <option value="autre">Autre</option>
                         <option value="demande">Demande</option>
                         <option value="sav">S.A.V</option>
