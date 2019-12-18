@@ -4,7 +4,8 @@
 
 Voici un formulaire de contact pour une entreprise fictive nommée "Hackers Poulette" développé en PHP, HTML, CSS (bootstrap utilisé pour la grille).  
 Ce projet a été réalisé en 4 jours.
-Ce dernier dispose d'une gestion de formulaires non remplis / non conformes.
+Ce dernier dispose d'une gestion de formulaires non remplis / non conformes.  
+[Lien vers le formulaire](https://deryguillaume.000webhostapp.com/) 
 
 ## Technologies utilisées
 
